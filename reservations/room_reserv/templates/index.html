@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>System rezerwacji sal</title>
+</head>
+<body>
+  <div>
+      <table>
+          <tr>
+              <th>Lista sal:</th>
+              <th></th>
+              <td><a href="/room/new">Dodaj nową salę</a></td>
+          </tr>
+      {{room_list|safe}}
+      </table>
+      <table>
+          <tr>
+              <th>Sale niedostępne w dniu {{ today }}:</th>
+          </tr>
+          <tr>
+              {{reserved|safe}}
+          </tr>
+      </table>
+  </div>
+  <br>
+  <div>
+      <form action="/search" method="GET">
+        <fieldset>
+            <legend>Wyszukiwarka sali:</legend>
+            <label>Nazwa sali:<br>
+                <input type='text' name='name'>
+            </label><br>
+            <label>Minimalna pojemność:<br>
+                <input type='number' name='capacity' min="1">
+            </label><br>
+            <label>Dzień planowanej rezeracji:<br>
+                <input type='date' name='reservation_date' min="{{ today }}">
+            </label><br>
+            Projektor:<br>
+            <label>TAK
+                <input type="radio" name="projector" value="True" checked>
+            </label><br>
+            <label>NIE
+                <input type="radio" name="projector" value="False">
+            </label><br>
+            <input type='submit' value='Szukaj'>
+        </fieldset>
+      </form>
+  </div>
+</body>
+</html>

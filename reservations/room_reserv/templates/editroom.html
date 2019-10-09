@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edytuj informację o sali</title>
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <fieldset>
+            <legend>{{ info }}<br><b>{{ room_name }}</b></legend>
+            <label>Nowa nazwa sali:<br>
+                <input type='text' name='name'>
+            </label><br>
+            <label>Nowa pojemność sali:<br>
+                <input type='number' name='capacity'>
+            </label>
+            <p>Projektor:<br>
+            <label>TAK
+                <input type="radio" name="projector" value="True">
+            </label><br>
+            <label>NIE
+                <input type="radio" name="projector" value="False">
+            </label></p>
+            <input type='submit' value='Edytuj'>
+            <p><a href="/">Powrót</a></p>
+        </fieldset>
+    </form>
+</body>
+</html>

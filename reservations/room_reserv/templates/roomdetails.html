@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:br="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Szczegóły sali</title>
+</head>
+<body><h3>Szczegóły sali</h3>
+<p>Nazwa sali: {{ name }}</p>
+<p>Pojemność sali: {{ capacity }}</p>
+<p>Projektor: {{ projector }}</p>
+<p>Zarezerwowana w dniach: <ol>{{ reservation_list|safe}}</ol></p>
+
+<form action="/reservation/{{ room_id }}" method="POST">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Zarezerwuj salę {{ name }}</legend>
+            <label>Dzień:<br>
+                <input type='date' name='reservation_date' min="{{ today }}">
+            </label><br>
+            <label>Komentarz:<br>
+                <textarea cols="50" rows="10" name="comment"></textarea>
+            </label><br>
+            <input type='submit' value='Dodaj'>
+            <p>{{ info }}</p>
+        </fieldset>
+    </form>
+
+
+<p><a href="/">Powrót</a></p>
+</body>
+</html>

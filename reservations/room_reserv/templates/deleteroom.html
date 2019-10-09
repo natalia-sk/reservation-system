@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuwanie sali</title>
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <fieldset>
+            <legend>{{ info }}<br><b>{{ room_name }}</b></legend>
+            <label>Czy na pewno chcesz usunać salę?<br>
+                <input type="submit" name="delete" value="Tak">
+                <input type="submit" name="delete" value="Nie">
+            </label>
+            <p><a href="/">Powrót</a></p>
+        </fieldset>
+    </form>
+
+</body>
+</html>

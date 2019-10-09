@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wynik wyszukiwania</title>
+</head>
+<body>
+    <div><p>Wyniki wyszukiwania dla dnia {{ reservation_date }}</p>
+        <ol>{{ room_list|safe }}</ol>
+        <p><a href="/">Powrót</a></p>
+    </div>
+</body>
+</html>
