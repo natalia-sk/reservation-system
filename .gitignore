@@ -104,3 +104,4 @@ venv.bak/
 .mypy_cache/
 
 /reservations/reservations/local_settings.py
+.idea/
