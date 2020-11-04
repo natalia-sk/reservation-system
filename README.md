@@ -1,5 +1,5 @@
 # reservation-system
-The application for making conference room reservations. It allows users to add, edit and delete rooms. It allows booking a selected conference room for the whole day. The reserved conference room does not appear in the search results. On the main page of the application users see two lists with information about available or reserved conference rooms on a given day.
+The application for making conference room reservations. It allows users to add, edit and delete rooms. It allows booking a selected conference room for the whole day. The reserved conference room does not appear in the search results of other users. On the main page of the application users see two lists with information about available or reserved conference rooms on a given day.
 
 ## Technologies
 * Python 3.8.5
